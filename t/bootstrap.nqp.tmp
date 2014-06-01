@@ -1,0 +1,6 @@
+# -*- nqp -*-
+use xml;
+
+my $filename := "<filename>";
+my $content := slurp($filename);
+my $xml := XML::Grammar.parse($content);

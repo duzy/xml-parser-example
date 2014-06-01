@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root count="4">
+  <node name="node-1"/>
+  <node name="node-2" type ="child" />
+  <node name="node-3" age= "10" />
+  <node name="node-4">
+    <node name ="node-4-1" />
+    <node name = "node-4-2" />
+    <node name="node-4-3" >
+      text
+    </node>
+  </node >
+</root>
