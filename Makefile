@@ -7,8 +7,9 @@ XML_PBC := xml.pbc
 XML_PIR := xml.pir
 XML_NQP := xml.nqp
 XML_SOURCES := \
-  src/Grammar.nqp \
-  src/Actions.nqp \
+  src/xml/Grammar.nqp \
+  src/xml/Actions.nqp \
+  src/xml/Compiler.nqp \
 
 $(XML_PBC): $(XML_PIR)
 	$(PARROT) -t=pbc --output="$@" $<
@@ -19,5 +20,7 @@ $(XML_PIR): $(XML_NQP)
 $(XML_NQP): $(XML_SOURCES)
 	$(CAT) $^ > "$@"
 
-test: t/run.bash $(XML_PBC)
+test: test-xml
+
+test-xml: t/run.bash $(XML_PBC)
 	@$(BASH) $<
